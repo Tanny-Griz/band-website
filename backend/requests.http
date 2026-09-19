@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/bands
+Content-Type: application/json
+
+{
+  "bandName": "Demo Band",
+  "genre": "Alternative rock",
+  "description": "Independent demo band for the web client project"
+}
