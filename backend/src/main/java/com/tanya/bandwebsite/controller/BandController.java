@@ -2,9 +2,11 @@ package com.tanya.bandwebsite.controller;
 
 import com.tanya.bandwebsite.model.Band;
 import com.tanya.bandwebsite.service.BandService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/bands")
@@ -24,9 +26,12 @@ public class BandController {
     }
 
     // Returns one band by its ID.
+    // Returns 404 if the band does not exist.
     @GetMapping("/{id}")
-    public Band getBandById(@PathVariable Long id) {
-        return bandService.getBandById(id).orElse(null);
+    public ResponseEntity<Band> getBandById(@PathVariable Long id) {
+        return bandService.getBandById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     // Deletes one band by its ID.
@@ -36,15 +41,25 @@ public class BandController {
     }
 
     // Updates one band by its ID.
+    // Returns 404 if the band does not exist.
     @PutMapping("/{id}")
-    public Band updateBand(@PathVariable Long id, @RequestBody Band band) {
-        return bandService.updateBand(id, band);
+    public ResponseEntity<Band> updateBand(
+            @PathVariable Long id,
+            @Valid @RequestBody Band band) {
+
+        Band updatedBand = bandService.updateBand(id, band);
+
+        if (updatedBand == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(updatedBand);
     }
 
     // Handles POST /api/bands.
     // @RequestBody converts incoming JSON into a Band object.
     @PostMapping
-    public Band createBand(@RequestBody Band band) {
+    public Band createBand(@Valid @RequestBody Band band) {
         return bandService.createBand(band);
     }
 }

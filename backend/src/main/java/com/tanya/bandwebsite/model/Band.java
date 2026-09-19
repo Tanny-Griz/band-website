@@ -1,4 +1,5 @@
 package com.tanya.bandwebsite.model;
+import jakarta.validation.constraints.NotBlank;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +15,9 @@ public class Band {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bandId;
 
+    @NotBlank
     private String bandName;
+
     private String genre;
     private String description;
 
