@@ -23,6 +23,24 @@ public class BandController {
         return bandService.getAllBands();
     }
 
+    // Returns one band by its ID.
+    @GetMapping("/{id}")
+    public Band getBandById(@PathVariable Long id) {
+        return bandService.getBandById(id).orElse(null);
+    }
+
+    // Deletes one band by its ID.
+    @DeleteMapping("/{id}")
+    public void deleteBand(@PathVariable Long id) {
+        bandService.deleteBand(id);
+    }
+
+    // Updates one band by its ID.
+    @PutMapping("/{id}")
+    public Band updateBand(@PathVariable Long id, @RequestBody Band band) {
+        return bandService.updateBand(id, band);
+    }
+
     // Handles POST /api/bands.
     // @RequestBody converts incoming JSON into a Band object.
     @PostMapping

@@ -31,4 +31,22 @@ public class BandService {
     public void deleteBand(Long id) {
         bandRepository.deleteById(id);
     }
+
+    public Band updateBand(Long id, Band updatedBand) {
+        Band existingBand = bandRepository.findById(id).orElse(null);
+        //1. Searches for a Band by ID
+        //2. If not found → returns null
+        //3. If found → updates the fields
+        //4. save() saves the changes to the database
+
+        if (existingBand == null) {
+            return null;
+        }
+
+        existingBand.setBandName(updatedBand.getBandName());
+        existingBand.setGenre(updatedBand.getGenre());
+        existingBand.setDescription(updatedBand.getDescription());
+
+        return bandRepository.save(existingBand);
+    }
 }
