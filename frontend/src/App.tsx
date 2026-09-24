@@ -1,6 +1,7 @@
 import './App.css'
 import { BandInfo } from './components/BandInfo'
 import { TourInfo } from './components/TourInfo'
+import { VenueInfo } from './components/VenueInfo'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h1>Band Website</h1>
       <BandInfo />
       <TourInfo />
+      <VenueInfo />
     </main>
   )
 }
