@@ -12,7 +12,7 @@ public class Band {
 
     // Primary key. PostgreSQL generates the ID automatically.
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // The db generates the value during an INSERT operation.
     private Long bandId;
 
     @NotBlank
