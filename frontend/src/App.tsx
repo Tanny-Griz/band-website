@@ -1,5 +1,6 @@
 import './App.css'
 import { BandInfo } from './components/BandInfo'
+import { ShowInfo } from './components/ShowInfo'
 import { TourInfo } from './components/TourInfo'
 import { VenueInfo } from './components/VenueInfo'
 
@@ -10,6 +11,7 @@ function App() {
       <BandInfo />
       <TourInfo />
       <VenueInfo />
+      <ShowInfo />
     </main>
   )
 }
