@@ -1,6 +1,6 @@
-import { useShows } from '../hooks/useShows'
+import { useShows } from '../../hooks/useShows'
 
-export function ShowInfo() {
+export function ShowsSection() {
     const { shows, loading, error } = useShows()
 
     if (loading) {
@@ -16,7 +16,7 @@ export function ShowInfo() {
     }
 
     return (
-        <section>
+        <section id="shows">
             <h2>Shows</h2>
 
             {shows.map((show) => (

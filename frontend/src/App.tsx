@@ -1,18 +1,17 @@
-import './App.css'
-import { BandInfo } from './components/BandInfo'
-import { ShowInfo } from './components/ShowInfo'
-import { TourInfo } from './components/TourInfo'
-import { VenueInfo } from './components/VenueInfo'
+import './styles/App.css'
+import { FooterSection } from './layout/footer/FooterSection'
+import { HeaderSection } from './layout/header/HeaderSection'
+import { HeroSection } from './sections/hero/HeroSection'
 
 function App() {
   return (
-    <main className="app">
-      <h1>Band Website</h1>
-      <BandInfo />
-      <TourInfo />
-      <VenueInfo />
-      <ShowInfo />
-    </main>
+    <div className="app">
+      <HeaderSection />
+      <main className="app-main">
+        <HeroSection />
+      </main>
+      <FooterSection />
+    </div>
   )
 }
 
