@@ -1,13 +1,11 @@
+import { apiGet } from './apiClient'
 import type { Band } from '../types/band'
 
+export async function getBands(): Promise<Band[]> {
+    return apiGet<Band[]>('/api/bands')
+}
+
 export async function getBand(): Promise<Band | null> {
-    const response = await fetch('/api/bands')
-
-    if (!response.ok) {
-        throw new Error('Failed to fetch band')
-    }
-
-    const bands: Band[] = await response.json()
-
+    const bands = await getBands()
     return bands[0] ?? null
 }
