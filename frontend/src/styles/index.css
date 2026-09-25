@@ -81,9 +81,6 @@ h1 {
   font-weight: 800;
   line-height: 1.15;
   margin: 0;
-  text-shadow:
-    0 0 18px rgba(215, 238, 240, 0.18),
-    0 2px 0 rgba(0, 0, 0, 0.7);
 }
 
 h2 {
