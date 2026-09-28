@@ -6,12 +6,6 @@ export function HeroSection() {
 
     return (
         <section className="hero" id="home" aria-label="Band introduction">
-            <img
-                className="hero__image"
-                src="/images/hero.png"
-                alt="Cinematic Electronica Hero"
-                aria-hidden="true"
-            />
             <div className="hero__content">
                 <p className="hero__eyebrow">{band?.genre ?? 'Cinematic Electronica'}</p>
                 <h1>{band?.bandName ?? 'Band Website'}</h1>
