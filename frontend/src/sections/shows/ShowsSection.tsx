@@ -1,35 +1,58 @@
-import { useShows } from '../../hooks/useShows'
+import './ShowsSection.css'
+
+const upcomingShows = [
+  {
+    month: 'Oct',
+    day: '10',
+    dateTime: '2026-10-10',
+    venue: 'Fine Line',
+    location: 'Minneapolis, MN',
+  },
+  {
+    month: 'Oct',
+    day: '22',
+    dateTime: '2026-10-22',
+    venue: 'The Rave',
+    location: 'Milwaukee, WI',
+  },
+  {
+    month: 'Nov',
+    day: '05',
+    dateTime: '2026-11-05',
+    venue: 'House of Blues',
+    location: 'Chicago, IL',
+  },
+  {
+    month: 'Nov',
+    day: '18',
+    dateTime: '2026-11-18',
+    venue: 'Metro',
+    location: 'Detroit, MI',
+  },
+]
 
 export function ShowsSection() {
-    const { shows, loading, error } = useShows()
+  return (
+    <section className="shows" id="shows" aria-labelledby="shows-title">
+      <div className="shows__inner">
+        <h2 id="shows-title">Upcoming Shows</h2>
 
-    if (loading) {
-        return <p>Loading shows...</p>
-    }
+        <div className="shows__list">
+          {upcomingShows.map((show) => (
+            <article className="shows__item" key={`${show.month}-${show.day}-${show.venue}`}>
+              <time className="shows__date" dateTime={show.dateTime}>
+                <span className="shows__month">{show.month}</span>
+                <span className="shows__day">{show.day}</span>
+              </time>
 
-    if (error) {
-        return <p>{error}</p>
-    }
-
-    if (shows.length === 0) {
-        return <p>No shows found.</p>
-    }
-
-    return (
-        <section id="shows">
-            <h2>Shows</h2>
-
-            {shows.map((show) => (
-                <div key={show.showId}>
-                    <h3>{show.tour.tourName}</h3>
-                    <p>Date: {show.showDateTime}</p>
-                    <p>Venue: {show.venue.venueName}</p>
-                    <p>
-                        {show.venue.city}
-                        {show.venue.state && `, ${show.venue.state}`}, {show.venue.country}
-                    </p>
-                </div>
-            ))}
-        </section>
-    )
+              <div className="shows__details">
+                <h3>{show.venue}</h3>
+                <p>{show.location}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }

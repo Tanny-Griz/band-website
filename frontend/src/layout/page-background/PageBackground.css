@@ -37,7 +37,7 @@
 }
 
 .page-background__image--release {
-  top: clamp(560px, 90svh, 720px);
+  top: clamp(560px, 95svh, 2000px);
   height: 760px;
   object-position: right;
   opacity: 0.6;
