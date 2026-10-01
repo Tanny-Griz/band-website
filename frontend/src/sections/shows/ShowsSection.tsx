@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useShows } from '../../hooks/useShows'
 import type { Show } from '../../types/show'
 import './ShowsSection.css'
@@ -26,8 +27,15 @@ function sortShowsByDate(shows: Show[]) {
 }
 
 export function ShowsSection() {
+  const [showAllShows, setShowAllShows] = useState(false)
   const { shows, loading, error } = useShows()
-  const visibleShows = sortShowsByDate(shows).slice(0, visibleShowCount)
+  const sortedShows = sortShowsByDate(shows)
+  const visibleShows = showAllShows ? sortedShows : sortedShows.slice(0, visibleShowCount)
+  const hasMoreShows = sortedShows.length > visibleShowCount
+
+  function handleToggleShows() {
+    setShowAllShows((currentValue) => !currentValue)
+  }
 
   return (
     <section className="shows" id="shows" aria-labelledby="shows-title">
@@ -57,6 +65,18 @@ export function ShowsSection() {
             </article>
           ))}
         </div>
+
+        {!loading && !error && hasMoreShows && (
+          <button
+            className="shows__toggle"
+            type="button"
+            aria-expanded={showAllShows}
+            onClick={handleToggleShows}
+          >
+            <span>{showAllShows ? 'Show Less' : 'Show More'}</span>
+            <span className="shows__toggle-icon" aria-hidden="true" />
+          </button>
+        )}
       </div>
     </section>
   )
