@@ -28,6 +28,14 @@
   flex-direction: column;
 }
 
+.shows__state {
+  margin: 0;
+  padding: 22px 28px;
+  border: 1px solid rgba(215, 238, 240, 0.24);
+  color: var(--color-white-soft);
+  backdrop-filter: blur(6px);
+}
+
 .shows__item {
   position: relative;
   display: grid;

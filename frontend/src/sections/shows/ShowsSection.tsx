@@ -1,53 +1,58 @@
+import { useShows } from '../../hooks/useShows'
+import type { Show } from '../../types/show'
 import './ShowsSection.css'
 
-const upcomingShows = [
-  {
-    month: 'Oct',
-    day: '10',
-    dateTime: '2026-10-10',
-    venue: 'Fine Line',
-    location: 'Minneapolis, MN',
-  },
-  {
-    month: 'Oct',
-    day: '22',
-    dateTime: '2026-10-22',
-    venue: 'The Rave',
-    location: 'Milwaukee, WI',
-  },
-  {
-    month: 'Nov',
-    day: '05',
-    dateTime: '2026-11-05',
-    venue: 'House of Blues',
-    location: 'Chicago, IL',
-  },
-  {
-    month: 'Nov',
-    day: '18',
-    dateTime: '2026-11-18',
-    venue: 'Metro',
-    location: 'Detroit, MI',
-  },
-]
+const visibleShowCount = 4
+
+function formatShowMonth(showDateTime: string) {
+  return new Intl.DateTimeFormat('en-US', { month: 'short' })
+    .format(new Date(showDateTime))
+    .toUpperCase()
+}
+
+function formatShowDay(showDateTime: string) {
+  return new Intl.DateTimeFormat('en-US', { day: '2-digit' }).format(new Date(showDateTime))
+}
+
+function formatVenueLocation(show: Show) {
+  return [show.venue.city, show.venue.state || show.venue.country].filter(Boolean).join(', ')
+}
+
+function sortShowsByDate(shows: Show[]) {
+  return [...shows].sort(
+    (firstShow, secondShow) =>
+      new Date(firstShow.showDateTime).getTime() - new Date(secondShow.showDateTime).getTime(),
+  )
+}
 
 export function ShowsSection() {
+  const { shows, loading, error } = useShows()
+  const visibleShows = sortShowsByDate(shows).slice(0, visibleShowCount)
+
   return (
     <section className="shows" id="shows" aria-labelledby="shows-title">
       <div className="shows__inner">
         <h2 id="shows-title">Upcoming Shows</h2>
 
+        {loading && <p className="shows__state">Loading shows...</p>}
+
+        {error && <p className="shows__state">{error}</p>}
+
+        {!loading && !error && visibleShows.length === 0 && (
+          <p className="shows__state">No upcoming shows found.</p>
+        )}
+
         <div className="shows__list">
-          {upcomingShows.map((show) => (
-            <article className="shows__item" key={`${show.month}-${show.day}-${show.venue}`}>
-              <time className="shows__date" dateTime={show.dateTime}>
-                <span className="shows__month">{show.month}</span>
-                <span className="shows__day">{show.day}</span>
+          {visibleShows.map((show) => (
+            <article className="shows__item" key={show.showId}>
+              <time className="shows__date" dateTime={show.showDateTime}>
+                <span className="shows__month">{formatShowMonth(show.showDateTime)}</span>
+                <span className="shows__day">{formatShowDay(show.showDateTime)}</span>
               </time>
 
               <div className="shows__details">
-                <h3>{show.venue}</h3>
-                <p>{show.location}</p>
+                <h3>{show.venue.venueName}</h3>
+                <p>{formatVenueLocation(show)}</p>
               </div>
             </article>
           ))}
