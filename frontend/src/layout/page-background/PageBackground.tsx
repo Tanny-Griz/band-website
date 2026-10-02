@@ -13,6 +13,11 @@ export function PageBackground() {
         src="/images/last_release_bg.png"
         alt=""
       />
+      <img
+        className="page-background__image page-background__image--footer"
+        src="/images/footer.png"
+        alt=""
+      />
     </div>
   )
 }
