@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button/Button'
 import './LatestReleaseSection.css'
 
 export function LatestReleaseSection() {
@@ -16,6 +17,18 @@ export function LatestReleaseSection() {
           <p className="latest-release__eyebrow">Latest Release</p>
           <h2 id="latest-release-title">Echoes of the Void</h2>
           <p className="latest-release__date">Out May 10, 2026</p>
+
+          <div className="latest-release__actions" aria-label="Listen to Echoes of the Void">
+            <Button href="https://open.spotify.com" icon="●" variant="media">
+              Spotify
+            </Button>
+            <Button href="https://music.apple.com" icon="♪" variant="media">
+              Apple Music
+            </Button>
+            <Button href="https://www.youtube.com" icon="▶" variant="media">
+              YouTube
+            </Button>
+          </div>
         </div>
       </div>
     </section>

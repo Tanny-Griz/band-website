@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button/Button'
 import { useBand } from '../../hooks/useBand'
 import './HeroSection.css'
 
@@ -13,6 +14,15 @@ export function HeroSection() {
                     {band?.description ??
                         'Raw emotion. Where tension becomes sound.'}
                 </p>
+
+                <div className="hero__actions" aria-label="Band actions">
+                    <Button href="#latest-release" variant="primary">
+                        Listen Now
+                    </Button>
+                    <Button href="#shows" variant="outline">
+                        View Shows
+                    </Button>
+                </div>
             </div>
         </section>
     )

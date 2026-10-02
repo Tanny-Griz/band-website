@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button } from '../../components/Button/Button'
 import { useShows } from '../../hooks/useShows'
 import type { Show } from '../../types/show'
 import './ShowsSection.css'
@@ -62,20 +63,29 @@ export function ShowsSection() {
                 <h3>{show.venue.venueName}</h3>
                 <p>{formatVenueLocation(show)}</p>
               </div>
+
+              <Button
+                className="shows__ticket-button"
+                href="#tickets"
+                showArrow
+                variant="ticket"
+              >
+                Tickets
+              </Button>
             </article>
           ))}
         </div>
 
         {!loading && !error && hasMoreShows && (
-          <button
+          <Button
             className="shows__toggle"
-            type="button"
             aria-expanded={showAllShows}
             onClick={handleToggleShows}
+            showArrow
+            variant="outline"
           >
-            <span>{showAllShows ? 'Show Less' : 'Show More'}</span>
-            <span className="shows__toggle-icon" aria-hidden="true" />
-          </button>
+            {showAllShows ? 'Show Less' : 'Show More'}
+          </Button>
         )}
       </div>
     </section>

@@ -58,6 +58,13 @@
     0 0 38px rgba(92, 0, 12, 0.24);
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
 @keyframes hero-description-shadows {
   0% {
     background-position: 0 0, 58% 0, 100% 0;
@@ -80,5 +87,10 @@
 
   .hero__content {
     padding: 96px 16px 64px;
+  }
+
+  .hero__actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 }

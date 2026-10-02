@@ -1,0 +1,88 @@
+.ui-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--color-border-red);
+  color: var(--color-white);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.ui-button:hover {
+  color: var(--color-white);
+}
+
+.ui-button--primary {
+  border-color: rgba(227, 53, 61, 0.72);
+  background:
+    linear-gradient(90deg, rgba(183, 25, 36, 0.96), rgba(227, 53, 61, 0.76)),
+    var(--color-blood);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    var(--shadow-red);
+}
+
+.ui-button--primary:hover {
+  border-color: var(--color-blood-hot);
+  background:
+    linear-gradient(90deg, var(--color-blood-hot), rgba(183, 25, 36, 0.86)),
+    var(--color-blood);
+}
+
+.ui-button--outline,
+.ui-button--media,
+.ui-button--ticket {
+  border-color: rgba(215, 238, 240, 0.32);
+  background: rgba(4, 8, 9, 0.24);
+  color: var(--color-white-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 22px rgba(66, 191, 192, 0.08);
+}
+
+.ui-button--outline:hover,
+.ui-button--media:hover {
+  border-color: rgba(215, 238, 240, 0.56);
+  color: var(--color-white);
+}
+
+.ui-button--ticket {
+  min-width: 132px;
+  border-color: rgba(227, 53, 61, 0.48);
+  color: var(--color-blood-hot);
+}
+
+.ui-button--ticket:hover {
+  border-color: rgba(227, 53, 61, 0.76);
+  color: var(--color-white);
+}
+
+.ui-button__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ui-button__arrow {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}

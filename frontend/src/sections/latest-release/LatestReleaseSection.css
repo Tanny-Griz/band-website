@@ -61,6 +61,13 @@
   font-weight: 400;
 }
 
+.latest-release__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
 @media (max-width: 820px) {
   .latest-release {
     margin-top: -32px;
@@ -76,5 +83,10 @@
   .latest-release__content {
     max-width: none;
     transform: none;
+  }
+
+  .latest-release__actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
