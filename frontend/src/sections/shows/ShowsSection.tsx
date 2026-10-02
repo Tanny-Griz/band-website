@@ -40,7 +40,7 @@ export function ShowsSection() {
 
   return (
     <section className="shows" id="shows" aria-labelledby="shows-title">
-      <div className="shows__inner">
+      <div className="shows__inner section-container">
         <h2 id="shows-title">Upcoming Shows</h2>
 
         {loading && <p className="shows__state">Loading shows...</p>}

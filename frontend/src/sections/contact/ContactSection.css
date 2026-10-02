@@ -6,12 +6,6 @@
   background: transparent;
 }
 
-.contact__inner {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 .contact h2 {
   margin: 0;
   color: var(--color-white-soft);
@@ -25,9 +19,5 @@
   .contact {
     min-height: 420px;
     padding: 72px 0;
-  }
-
-  .contact__inner {
-    padding: 0 16px;
   }
 }

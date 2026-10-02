@@ -4,7 +4,7 @@ import './LatestReleaseSection.css'
 export function LatestReleaseSection() {
   return (
     <section className="latest-release" id="latest-release" aria-labelledby="latest-release-title">
-      <div className="latest-release__inner">
+      <div className="latest-release__inner section-container">
         <div className="latest-release__artwork-wrap">
           <img
             className="latest-release__artwork"

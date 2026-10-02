@@ -7,9 +7,6 @@
 }
 
 .latest-release__inner {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  padding: 0 24px;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
@@ -77,7 +74,6 @@
   .latest-release__inner {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 0 16px;
   }
 
   .latest-release__content {

@@ -19,3 +19,15 @@
   position: relative;
   z-index: 2;
 }
+
+.section-container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+@media (max-width: 720px) {
+  .section-container {
+    padding-inline: 16px;
+  }
+}

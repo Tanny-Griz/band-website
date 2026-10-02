@@ -7,7 +7,7 @@ export function HeroSection() {
 
     return (
         <section className="hero" id="home" aria-label="Band introduction">
-            <div className="hero__content">
+            <div className="hero__content section-container">
                 <p className="hero__eyebrow">{band?.genre ?? 'Cinematic Electronica'}</p>
                 <h1>{band?.bandName ?? 'Band Website'}</h1>
                 <p className="hero__description">
