@@ -11,7 +11,7 @@
   color: var(--color-white-soft);
   font-size: clamp(24px, 2vw, 42px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
