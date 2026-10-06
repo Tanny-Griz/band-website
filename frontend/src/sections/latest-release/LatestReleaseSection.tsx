@@ -1,4 +1,5 @@
 import { Button } from '../../components/Button/Button'
+import { BrandIcon } from '../../components/icons/BrandIcon'
 import './LatestReleaseSection.css'
 
 export function LatestReleaseSection() {
@@ -19,13 +20,13 @@ export function LatestReleaseSection() {
           <p className="latest-release__date">Out May 10, 2026</p>
 
           <div className="latest-release__actions" aria-label="Listen to Echoes of the Void">
-            <Button href="https://open.spotify.com" icon="●" variant="media">
+            <Button href="https://open.spotify.com" icon={<BrandIcon name="spotify" />} variant="media">
               Spotify
             </Button>
-            <Button href="https://music.apple.com" icon="♪" variant="media">
+            <Button href="https://music.apple.com" icon={<BrandIcon name="appleMusic" />} variant="media">
               Apple Music
             </Button>
-            <Button href="https://www.youtube.com" icon="▶" variant="media">
+            <Button href="https://www.youtube.com" icon={<BrandIcon name="youtube" />} variant="media">
               YouTube
             </Button>
           </div>
