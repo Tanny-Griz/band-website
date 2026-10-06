@@ -9,7 +9,8 @@ export function HeroSection() {
         <section className="hero" id="home" aria-label="Band introduction">
             <div className="hero__content section-container">
                 <p className="hero__eyebrow">{band?.genre ?? 'Cinematic Electronica'}</p>
-                <h1>{band?.bandName ?? 'Band Website'}</h1>
+                {/*<h1>{band?.bandName ?? 'Syntheir'}</h1>*/}
+                <h1>Syntheir</h1>
                 <p className="hero__description">
                     {band?.description ??
                         'Raw emotion. Where tension becomes sound.'}
