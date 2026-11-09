@@ -10,11 +10,15 @@
   align-items: center;
   gap: 16px;
   color: var(--color-white-soft);
+  font-family: "Anton", sans-serif;
   margin-bottom: 24px;
   font-size: clamp(24px, 2vw, 42px);
-  font-weight: 600;
-  letter-spacing: 0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-shadow:
+          2px 2px 0 rgba(255, 255, 255, 0.08),
+          4px 5px 0 rgba(0, 0, 0, 0.65);
 }
 
 .shows__list {
@@ -130,14 +134,38 @@
   }
 
   .shows__item {
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 58px minmax(0, 1fr) 44px;
+    gap: 14px;
     min-height: 82px;
     padding: 14px 16px;
   }
 
   .shows__ticket-button {
-    grid-column: 1 / -1;
-    width: 100%;
+    justify-self: end;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .shows__ticket-button .ui-button__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .shows__ticket-button .ui-button__arrow {
+    width: 16px;
+    height: 16px;
+    border-width: 1.5px;
   }
 
   .shows__month {
@@ -145,10 +173,11 @@
   }
 
   .shows__day {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .shows__toggle {
-    width: 100%;
+    width: fit-content;
+    min-width: 180px;
   }
 }

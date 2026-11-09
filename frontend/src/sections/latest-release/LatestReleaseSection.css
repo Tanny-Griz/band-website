@@ -82,7 +82,7 @@
   }
 
   .latest-release__actions {
-    align-items: stretch;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }

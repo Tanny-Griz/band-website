@@ -79,4 +79,20 @@
   .site-footer__socials {
     gap: 18px;
   }
+
+  .site-footer__link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(215, 238, 240, 0.28);
+    border-radius: 50%;
+    background: rgba(4, 8, 9, 0.18);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 18px rgba(66, 191, 192, 0.06);
+  }
+
+  .site-footer__link svg {
+    width: 20px;
+    height: 20px;
+  }
 }

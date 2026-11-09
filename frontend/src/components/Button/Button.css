@@ -92,3 +92,32 @@
   border-right: 2px solid currentColor;
   transform: rotate(45deg);
 }
+
+@media (max-width: 820px) {
+  .ui-button--media {
+    width: 56px;
+    min-width: 56px;
+    height: 56px;
+    min-height: 56px;
+    border-radius: 100%;
+    padding: 0;
+    border-color: rgba(215, 238, 240, 0.22);
+    background: rgba(4, 8, 9, 0.16);
+  }
+
+  .ui-button--media .ui-button__icon,
+  .ui-button--media .ui-button__icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ui-button--media .ui-button__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
