@@ -24,7 +24,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.52));
 }
 
 .latest-release__content {
@@ -34,28 +33,14 @@
 
 .latest-release__eyebrow {
   margin-bottom: 14px;
-  color: var(--color-blood-hot);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-shadow: var(--shadow-red);
 }
 
 .latest-release h2 {
   margin-bottom: 12px;
-  font-size: clamp(24px, 3vw, 38px);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 0.98;
-  text-transform: uppercase;
 }
 
 .latest-release__date {
   margin-bottom: 26px;
-  color: var(--color-white);
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .latest-release__actions {

@@ -14,27 +14,9 @@
   --color-border-red: rgba(227, 53, 61, 0.45);
   --color-panel: rgba(7, 11, 13, 0.78);
   --color-panel-strong: rgba(11, 16, 18, 0.92);
-  --shadow-red: 0 0 34px rgba(183, 25, 36, 0.22);
-  --shadow-moon: 0 0 24px rgba(215, 238, 240, 0.12);
-  --font-narrow:
-    "Arial Narrow",
-    "Roboto Condensed",
-    "Helvetica Neue Condensed",
-    "Liberation Sans Narrow",
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    sans-serif;
-
-  font-family: var(--font-narrow);
-  font-stretch: condensed;
-  color: var(--color-white);
+  color: #fff;
   background: var(--color-black);
   color-scheme: dark;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -49,7 +31,7 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0;
-  color: var(--color-white);
+  color: #fff;
   background:
     radial-gradient(circle at 83% 9%, rgba(215, 238, 240, 0.22), transparent 18rem),
     radial-gradient(circle at 34% 8%, rgba(183, 25, 36, 0.28), transparent 20rem),
@@ -85,64 +67,44 @@ p {
 }
 
 h1 {
-  color: var(--color-white);
-  font-size: clamp(36px, 7vw, 76px);
-  font-weight: 800;
-  line-height: 1.15;
   margin: 0;
 }
 
 h2 {
   margin: 0 0 20px;
-  color: var(--color-white);
-  font-size: 24px;
-  line-height: 1.2;
-  text-shadow: var(--shadow-moon);
 }
 
 h3 {
   margin: 0 0 8px;
-  color: var(--color-white);
-  font-size: 18px;
-  line-height: 1.2;
 }
 
 p {
   margin: 0 0 8px;
-  color: var(--color-muted);
 }
 
 a {
-  color: var(--color-moon);
+  color: inherit;
 }
 
 button,
 .button {
   min-height: 44px;
-  border: 1px solid var(--color-border-red);
-  background:
-    linear-gradient(135deg, rgba(227, 53, 61, 0.88), rgba(91, 11, 16, 0.9)),
-    var(--color-blood);
-  color: var(--color-white);
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
   cursor: pointer;
-  font: inherit;
-  font-weight: 800;
   padding: 10px 18px;
-  text-transform: uppercase;
-  box-shadow: var(--shadow-red);
 }
 
 button:hover,
 .button:hover {
-  border-color: var(--color-blood-hot);
-  background:
-    linear-gradient(135deg, var(--color-blood-hot), var(--color-blood-dark)),
-    var(--color-blood);
+  border-color: currentColor;
+  background: transparent;
 }
 
 button:focus-visible,
 .button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--color-moon);
+  outline: 2px solid currentColor;
   outline-offset: 3px;
 }
