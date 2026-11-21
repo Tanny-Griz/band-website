@@ -1,19 +1,15 @@
 import { Button } from '../../components/Button/Button'
-import { useBand } from '../../hooks/useBand'
 import './HeroSection.css'
 
 export function HeroSection() {
-    const { band } = useBand()
-
     return (
         <section className="hero" id="home" aria-label="Band introduction">
             <div className="hero__content section-container">
-                <p className="hero__eyebrow">{band?.genre ?? 'Cinematic Electronica'}</p>
-                {/*<h1>{band?.bandName ?? 'Syntheir'}</h1>*/}
-                <h1>Syntheir</h1>
+                <h1 className="display-heading">Sounds</h1>
+                <p className="section-eyebrow hero__eyebrow">Cinematic Electronica / Darkwave</p>
+                <span className="signal-line hero__signal" aria-hidden="true" />
                 <p className="hero__description">
-                    {band?.description ??
-                        'Raw emotion. Where tension becomes sound.'}
+                    Music for the space between human and machine — cinematic soundscapes, electronic tension, and dark alternative emotion.
                 </p>
 
                 <div className="hero__actions" aria-label="Band actions">

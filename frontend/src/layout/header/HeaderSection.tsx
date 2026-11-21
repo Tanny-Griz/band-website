@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { BrandIcon } from '../../components/icons/BrandIcon'
+import { socialLinks } from '../../components/icons/socialLinks'
 import './HeaderSection.css'
 
 const navigationItems = [
@@ -126,6 +128,14 @@ export function HeaderSection() {
               )
             })}
           </ul>
+        </nav>
+
+        <nav className="site-header__socials" aria-label="Music links">
+          {socialLinks.map(({ href, icon, label }) => (
+            <a href={href} key={label} target="_blank" rel="noreferrer" aria-label={label}>
+              <BrandIcon name={icon} />
+            </a>
+          ))}
         </nav>
       </div>
     </header>

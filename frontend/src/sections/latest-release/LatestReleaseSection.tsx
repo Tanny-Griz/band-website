@@ -15,8 +15,8 @@ export function LatestReleaseSection() {
         </div>
 
         <div className="latest-release__content">
-          <p className="latest-release__eyebrow">Latest Release</p>
-          <h2 id="latest-release-title">Echoes of the Void</h2>
+          <p className="section-eyebrow latest-release__eyebrow">Latest Release</p>
+          <h2 className="display-heading" id="latest-release-title">Echoes of the Void</h2>
           <p className="latest-release__date">Out May 10, 2026</p>
 
           <div className="latest-release__actions" aria-label="Listen to Echoes of the Void">
