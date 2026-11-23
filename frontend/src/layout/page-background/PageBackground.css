@@ -39,9 +39,8 @@
 }
 
 .page-background__image--release {
-  top: clamp(560px, 95svh, 2000px);
+  top: clamp(560px, 82svh, 2000px);
   height: 760px;
-  object-position: right;
   opacity: 0.6;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 16%, black 76%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, black 16%, black 76%, transparent 100%);
@@ -59,18 +58,18 @@
 @media (max-width: 720px) {
   .page-background__image--hero {
     height: 76svh;
-    object-position: 65% top;
+    object-position: 81% top;
   }
 
   .page-background__image--release {
     top: calc(76svh - 32px);
     height: 620px;
-    object-position: center top;
+    object-position: 70% top;
   }
 
   .page-background__image--footer {
     top: 1500px;
     height: 560px;
-    object-position: center bottom;
+    object-position: 85% top;
   }
 }
